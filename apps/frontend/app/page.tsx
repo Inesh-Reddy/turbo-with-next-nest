@@ -25,11 +25,10 @@ export default function Home() {
 
       const data = await res.json();
       console.log("POST successful:", data);
-
-      // ✅ Navigate after successful post
       router.push("/todo");
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error) {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-expect-error
       console.error("POST failed:", error.message);
     }
   };
